@@ -67,12 +67,12 @@ public:
 			board.resize(24);
 			for (int i = 0; i < 22; i++)
 				if (i % 3 != 0)
-					board[i] = new Casella_Propriet‡(i, i / 6 + 1, Casella_Propriet‡::COLORE(i / 3));
+					board[i] = new Casella_Propriet√†(i, i / 6 + 1, Casella_Propriet√†::COLORE(i / 3));
 				else if (i % 6 != 0)
 					board[i] = new Casella_Imprevisto(i);//imprevisti
 
-			board[22] = new Casella_Propriet‡(22, 5, Casella_Propriet‡::BLU);
-			board[23] = new Casella_Propriet‡(23, 5, Casella_Propriet‡::BLU);
+			board[22] = new Casella_Propriet√†(22, 5, Casella_Propriet√†::BLU);
+			board[23] = new Casella_Propriet√†(23, 5, Casella_Propriet√†::BLU);
 			board[0] = new Casella_ParcheggioGratuito(0);//via
 			board[6] = new Casella_ParcheggioGratuito(6);//prigione
 			board[12] = new Casella_ParcheggioGratuito(12);//parcheggio gratuito
@@ -160,7 +160,7 @@ public:
 			break;
 
 		case COMPRA: {
-			Casella_Propriet‡* prop = dynamic_cast<Casella_Propriet‡*>(board[players[currentPlayer]->pos]);
+			Casella_Propriet√†* prop = dynamic_cast<Casella_Propriet√†*>(board[players[currentPlayer]->pos]);
 
 			if (prop != nullptr) {
 				players[currentPlayer]->soldi -= prop->prezzo;
@@ -177,8 +177,8 @@ public:
 
 				if (carte[idx]->azione(players, currentPlayer)) nextState = EFFETTO_CASELLA;
 				else nextState = PASSA_TURNO;
+				
 				//std::cout << idx << "\n";
-				nextState = PASSA_TURNO;
 
 				std::vector<std::string> testo;
 				std::vector<std::string> testocarta = wrapText(carte[idx]->testo, 30);

@@ -53,6 +53,7 @@ public:
 
 		float tempoPerFrame = 0.5f;
 		if (GetKey(olc::T).bHeld) tempoPerFrame = 0.05f;
+		if (GetKey(olc::Y).bHeld) tempoPerFrame = 1.0f;
 
 		bool timer = false;
 		if (tempo > tempoPerFrame) {
